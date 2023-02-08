@@ -2,11 +2,16 @@
 import Button from "@/components/Button/button.vue"
 import checkbox from '@/components/CheckBox/checkbox.vue'
 import checkboxGroup from '@/components/CheckBox/checkboxGroup.vue'
+import datePicker from '@/components/DatePicker/datePicker.vue'
+import Input from '@/components/Input/input.vue'
 import { computed, ref } from "vue";
 const cities = ref(['Beijing'])
 const checked = ref(true)
 const select = ref(false)
 const checkedLabel = computed(() => checked.value ? '选中' : '未选中')
+const input = ref('')
+const input1 = ref('')
+const input2 = ref('')
 function handleClick() {
   alert(1)
 }
@@ -86,13 +91,21 @@ function handleClick() {
 
   </checkbox-group>
   受控组件
-  <Button @click="select=true" >选中</Button>
-  <Button @click="select=false" >不选中</Button>
+  <Button @click="select = true">选中</Button>
+  <Button @click="select = false">不选中</Button>
   {{ select }}
   <checkbox value="1" :checked="select">{{ checkedLabel }}</checkbox>
   <div>
     尺寸
     <checkbox size="lg">大</checkbox>
     <checkbox size="sm">小</checkbox>
+  </div>
+  <div>
+    <date-picker></date-picker>
+  </div>
+  <div>
+    <Input placeholder="Please input" v-model="input" />
+    <Input placeholder="Please input" v-model="input1" type="password" show-password />
+    <Input placeholder="Please input" v-model="input2" type="textarea" />
   </div>
 </template>
