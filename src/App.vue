@@ -4,6 +4,8 @@ import checkbox from '@/components/CheckBox/checkbox.vue'
 import checkboxGroup from '@/components/CheckBox/checkboxGroup.vue'
 import datePicker from '@/components/DatePicker/datePicker.vue'
 import Input from '@/components/Input/input.vue'
+import Select from '@/components/Select/select.vue'
+import Option from '@/components/Select/option.vue'
 import { computed, ref } from "vue";
 const cities = ref(['Beijing'])
 const checked = ref(true)
@@ -12,6 +14,37 @@ const checkedLabel = computed(() => checked.value ? '选中' : '未选中')
 const input = ref('')
 const input1 = ref('')
 const input2 = ref('')
+const input3 = ref('')
+
+
+
+const selectValue = ref('')
+const options = [
+  {
+    value: 'Option1',
+    label: 'Option1',
+  },
+  {
+    value: 'Option2',
+    label: 'Option2',
+    disabled: true,
+  },
+  {
+    value: 'Option3',
+    label: 'Option3',
+  },
+  {
+    value: 'Option4',
+    label: 'Option4',
+  },
+  {
+    value: 'Option5',
+    label: 'Option5',
+  },
+]
+
+
+
 function handleClick() {
   alert(1)
 }
@@ -100,21 +133,33 @@ function handleClick() {
     <checkbox size="lg">大</checkbox>
     <checkbox size="sm">小</checkbox>
   </div>
+
   <div>
-    <date-picker></date-picker>
-  </div>
-  <div>
-    <Input placeholder="Please input" v-model:value="input" />
-    <Input placeholder="Please input" v-model:value="input1" type="password" show-password />
-    <Input placeholder="Please input" v-model:value="input2" type="textarea" />
+    <Input placeholder="Please input" v-model:value="input" w="50" />
+    <Input placeholder="Please input" v-model:value="input1" disabled></Input>
+    <Input placeholder="Please input" v-model:value="input2" type="password" show-password />
+    <Input placeholder="Please input" v-model:value="input3" type="textarea" />
+
     图标：
     <Input>
     <template #suffix>
-      <i i-heroicons-calendar-days-20-solid></i>
+      <i i-heroicons-calendar-days-20-solid text-sm></i>
     </template>
     <template #prefix>
-
+      <i i-heroicons-calendar-days-20-solid text-sm></i>
     </template>
     </Input>
+  </div>
+
+  <div mt5>
+    <date-picker></date-picker>
+  </div>
+
+  <div>
+    <label>select</label>
+    <Select>
+      <Option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"
+        :disabled="item.disabled" />
+    </Select>
   </div>
 </template>

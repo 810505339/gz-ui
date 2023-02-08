@@ -1,0 +1,13 @@
+/*去除ie edge的密码框默认出现的小眼睛
+		给人添乱这一块，巨硬从来都没让我失望过*/
+input[type="password"]::-ms-reveal {
+  display: none;
+}
+
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-o-clear {
+  display: none;
+}
