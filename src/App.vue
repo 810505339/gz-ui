@@ -2,8 +2,11 @@
 import Button from "@/components/Button/button.vue"
 import checkbox from '@/components/CheckBox/checkbox.vue'
 import checkboxGroup from '@/components/CheckBox/checkboxGroup.vue'
-import { ref } from "vue";
-const cities = ref([])
+import { computed, ref } from "vue";
+const cities = ref(['Beijing'])
+const checked = ref(true)
+const select = ref(false)
+const checkedLabel = computed(() => checked.value ? '选中' : '未选中')
 function handleClick() {
   alert(1)
 }
@@ -72,12 +75,24 @@ function handleClick() {
     <div>禁止点击</div>
     <Button disabled @click="handleClick">Default</Button>
   </div>
+  {{ cities }}
   <checkbox-group v-model:value="cities">
     <div flex>
       <checkbox value="Beijing" label="北京" />
       <checkbox value="Shanghai" label="上海" />
       <checkbox value="Guangzhou" label="广州" />
-      <checkbox value="Shenzen">深圳</checkbox>
+      <checkbox value="Shenzen" disabled>深圳</checkbox>
     </div>
+
   </checkbox-group>
+  受控组件
+  <Button @click="select=true" >选中</Button>
+  <Button @click="select=false" >不选中</Button>
+  {{ select }}
+  <checkbox value="1" :checked="select">{{ checkedLabel }}</checkbox>
+  <div>
+    尺寸
+    <checkbox size="lg">大</checkbox>
+    <checkbox size="sm">小</checkbox>
+  </div>
 </template>
