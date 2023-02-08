@@ -18,10 +18,10 @@ const emits = defineEmits<{
 const handleFocus = (event: FocusEvent) => {
   focused.value = true
   emits('focus', event)
-  
 }
 const handleBlur = (event: FocusEvent) => {
   focused.value = false
+
   emits('blur', event)
 }
 const handleInput = (event: Event) => {
@@ -33,7 +33,9 @@ const handleInput = (event: Event) => {
 <template>
   <div flex px2 py2px items-center justify-center flex-grow rounded border="~" transition shadow-sm
     hover="border-violet-500" :class="[focused ? 'border-violet-500' : '']">
+    <slot name="suffix"></slot>
     <input outline-none :placeholder="placeholder" w="100%" placeholder-text-gray-4 placeholder-text-sm :type="type"
       :value="value" @focus="handleFocus" @blur="handleBlur" @input="handleInput" />
+    <slot name="prefix"></slot>
   </div>
 </template>

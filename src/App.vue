@@ -104,8 +104,17 @@ function handleClick() {
     <date-picker></date-picker>
   </div>
   <div>
-    <Input placeholder="Please input" v-model="input" />
-    <Input placeholder="Please input" v-model="input1" type="password" show-password />
-    <Input placeholder="Please input" v-model="input2" type="textarea" />
+    <Input placeholder="Please input" v-model:value="input" />
+    <Input placeholder="Please input" v-model:value="input1" type="password" show-password />
+    <Input placeholder="Please input" v-model:value="input2" type="textarea" />
+    图标：
+    <Input>
+    <template #suffix>
+      <i i-heroicons-calendar-days-20-solid></i>
+    </template>
+    <template #prefix>
+
+    </template>
+    </Input>
   </div>
 </template>
