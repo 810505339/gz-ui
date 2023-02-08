@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import Button from "@/components/Button/button.vue"
+import Button from ""
 import checkbox from '@/components/CheckBox/checkbox.vue'
 import checkboxGroup from '@/components/CheckBox/checkboxGroup.vue'
 import datePicker from '@/components/DatePicker/datePicker.vue'
 import Input from '@/components/Input/input.vue'
 import Select from '@/components/Select/select.vue'
 import Option from '@/components/Select/option.vue'
+import Tooltip from '@/components/Tooltip/tooltip.vue'
 import { computed, ref } from "vue";
 const cities = ref(['Beijing'])
 const checked = ref(true)
@@ -138,7 +139,8 @@ function handleClick() {
     <Input placeholder="Please input" v-model:value="input" w="50" />
     <Input placeholder="Please input" v-model:value="input1" disabled></Input>
     <Input placeholder="Please input" v-model:value="input2" type="password" show-password />
-    <Input placeholder="Please input" v-model:value="input3" type="textarea" />
+    <Input placeholder="Please clearable" v-model:value="input3" type="text" clearable />
+
 
     图标：
     <Input>
@@ -161,5 +163,12 @@ function handleClick() {
       <Option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"
         :disabled="item.disabled" />
     </Select>
+  </div>
+
+  <div>
+    tooltip
+    <Tooltip class="box-item" effect="dark" content="Top Left prompts info" placement="top-start">
+      <Button>top-start</Button>
+    </Tooltip>
   </div>
 </template>

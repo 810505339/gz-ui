@@ -8,9 +8,13 @@ const props = withDefaults(defineProps<{
   type?: string
   showPassword?: boolean
   disabled?: boolean
+  clearable?: boolean,
+  size: 'sm' | 'lg'
 }>(), {
   type: 'text',
-  disabled: false
+  disabled: false,
+  clearable: false,
+  size:'sm'
 })
 //emit
 const emits = defineEmits<{
@@ -48,10 +52,14 @@ const handlePasswordVisible = () => {
 
 }
 
+function handleClearVisible() {
+  emits('update:value', '')
+}
+
 
 //是否显示内置图标
 const suffixVisible = computed(() => {
-  return !!slot.suffix || props.showPassword
+  return !!slot.suffix || props.showPassword || props.clearable
 })
 
 //切换密码图标
@@ -62,6 +70,13 @@ const passwordIcon = computed(() =>
 const showPwdVisible = computed(() => {
   return props.showPassword && !props.disabled && props.value
 })
+
+//是否显示clear
+const showClearVisible = computed(() => {
+  return props.clearable && props.value
+})
+
+
 ///classFn
 
 function disabledClass() {
@@ -85,9 +100,10 @@ function disabledClass() {
         :type="showPassword ? (passwordVisible ? 'text' : 'password') : type" :value="value" @focus="handleFocus"
         @blur="handleBlur" @input="handleInput" :disabled="disabled" :class="disabledClass()" />
 
-      <span inline-flex items-center justify-center pl2 v-if="suffixVisible">
+      <span inline-flex items-center justify-center pl2 cursor-pointer v-if="suffixVisible">
         <slot name="suffix">
           <i :class="passwordIcon" v-if="showPwdVisible" @click="handlePasswordVisible" inline-block text-sm></i>
+          <i i-heroicons-x-mark v-if="showClearVisible" @click="handleClearVisible" inline-block text-sm></i>
         </slot>
       </span>
 

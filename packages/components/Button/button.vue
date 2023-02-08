@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import vRipple from '@/directives/ripple'
 
-
+defineOt
 
 interface Props {
   type?: 'primary' | 'info' | 'success' | 'warning' | 'error' | 'default'

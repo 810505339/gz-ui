@@ -1,0 +1,14 @@
+{
+  "name": "@gz-ui/components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "module": "index.ts",
+  "peerDependencies": {
+    "vue": "^3.2.47"
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
