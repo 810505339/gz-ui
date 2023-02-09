@@ -10,5 +10,8 @@
   "sideEffects": false,
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@gz-ui/utils": "workspace:^1.0.0"
+  }
 }
