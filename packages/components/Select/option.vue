@@ -10,7 +10,7 @@ const slot = useSlots()
 
 </script>
 <template>
-  <li>
+  <li relative overflow-hidden h32px  text-ellipsis  leading-32px hover="bg-gray-100" cursor-pointer>
     <span>{{ label }}</span>
   </li>
 </template>

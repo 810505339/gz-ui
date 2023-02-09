@@ -166,9 +166,9 @@ function handleClick() {
     <date-picker></date-picker>
   </div>
 
-  <div>
+  <div  w="200px">
     <label>select</label>
-    <Select placeholder="Select">
+    <Select placeholder="Select"  w200px >
       <Option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"
         :disabled="item.disabled" />
     </Select>
