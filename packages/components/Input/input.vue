@@ -85,6 +85,7 @@ function disabledClass() {
   return `${props.disabled ? 'cursor-not-allowed select-none' : ''}`
 }
 
+console.log(props.disabled);
 
 </script>
 <template>

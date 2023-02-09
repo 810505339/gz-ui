@@ -28,27 +28,27 @@ const input3 = ref('')
 
 
 
-const selectValue = ref('')
+const selectValue = ref('1')
 const options = [
   {
-    value: 'Option1',
+    value: '1',
     label: 'Option1',
   },
   {
-    value: 'Option2',
+    value: '2',
     label: 'Option2',
     disabled: true,
   },
   {
-    value: 'Option3',
+    value: '3',
     label: 'Option3',
   },
   {
-    value: 'Option4',
+    value: '4',
     label: 'Option4',
   },
   {
-    value: 'Option5',
+    value: '5',
     label: 'Option5',
   },
 ]
@@ -166,12 +166,15 @@ function handleClick() {
     <date-picker></date-picker>
   </div>
 
-  <div  w="200px">
-    <label>select</label>
-    <Select placeholder="Select"  w200px >
+  <div w="200px">
+    <label>selectValue:{{ selectValue }}</label>
+    <Button @click="selectValue = `3`">修改</Button>
+    <Select placeholder="Select" w200px v-model:value="selectValue" :option="options">
       <Option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"
         :disabled="item.disabled" />
     </Select>
+
+
   </div>
 
   <div>
