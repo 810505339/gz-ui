@@ -2,7 +2,7 @@
 import vRipple from './directives/ripple'
 
 defineOptions({
-  name: ''
+  name: 'gzButton'
 })
 
 interface Props {
@@ -64,5 +64,5 @@ function classDisabled(disabled: boolean) {
   </button>
 </template>
 <style>
-@import url('@/components/Button/index.css');
+@import url('./index.css');
 </style>

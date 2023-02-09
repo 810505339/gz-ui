@@ -1,6 +1,7 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue","packages"],
+  
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -9,7 +10,7 @@
     "moduleResolution": "nodenext",
     "types": ["node","unplugin-vue-macros/macros-global" ],
   },
-
+  "exclude": ["dist", "node_modules"],
   "references": [
     {
       "path": "./tsconfig.config.json"

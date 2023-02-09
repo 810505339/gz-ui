@@ -1,12 +1,21 @@
 <script setup lang="ts">
-import Button from ""
-import checkbox from '@/components/CheckBox/checkbox.vue'
-import checkboxGroup from '@/components/CheckBox/checkboxGroup.vue'
-import datePicker from '@/components/DatePicker/datePicker.vue'
-import Input from '@/components/Input/input.vue'
-import Select from '@/components/Select/select.vue'
-import Option from '@/components/Select/option.vue'
-import Tooltip from '@/components/Tooltip/tooltip.vue'
+import Button from '@gz-ui/components/Button/Button.vue'
+import checkbox from '@gz-ui/components/CheckBox/checkbox.vue'
+import type {
+  Instance,
+  Modifier,
+  Options,
+  State,
+  VirtualElement,
+} from '@popperjs/core'
+
+import checkboxGroup from '@gz-ui/components/CheckBox/checkboxGroup.vue'
+import datePicker from '@gz-ui/components/DatePicker/datePicker.vue'
+import Input from '@gz-ui/components/Input/input.vue'
+import Select from '@gz-ui/components/Select/select.vue'
+import Option from '@gz-ui/components/Select/option.vue'
+import Tooltip from '@gz-ui/components/Tooltip/tooltip.vue'
+import tag from '@gz-ui/components/Tag/tag.vue'
 import { computed, ref } from "vue";
 const cities = ref(['Beijing'])
 const checked = ref(true)
@@ -159,7 +168,7 @@ function handleClick() {
 
   <div>
     <label>select</label>
-    <Select>
+    <Select placeholder="Select">
       <Option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"
         :disabled="item.disabled" />
     </Select>
@@ -170,5 +179,14 @@ function handleClick() {
     <Tooltip class="box-item" effect="dark" content="Top Left prompts info" placement="top-start">
       <Button>top-start</Button>
     </Tooltip>
+  </div>
+
+  <div>
+    <tag>Tag1</tag>
+    <tag class="ml-2" type="success">Tag2</tag>
+    <tag class="ml-2" type="info">Tag3</tag>
+    <tag class="ml-2" type="warning">Tag4</tag>
+    <tag class="ml-2" type="danger">Tag5</tag>
+    <tag class="ml-2" type="danger" closable>可关闭</tag>
   </div>
 </template>

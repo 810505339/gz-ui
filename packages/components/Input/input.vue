@@ -9,12 +9,14 @@ const props = withDefaults(defineProps<{
   showPassword?: boolean
   disabled?: boolean
   clearable?: boolean,
-  size: 'sm' | 'lg'
+  size: 'sm' | 'lg',
+  readonly?: boolean
 }>(), {
   type: 'text',
   disabled: false,
   clearable: false,
-  size:'sm'
+  size: 'sm',
+  readonly: false
 })
 //emit
 const emits = defineEmits<{
@@ -98,7 +100,7 @@ function disabledClass() {
 
       <input outline-none :placeholder="placeholder" w="100%" placeholder-text-gray-4 placeholder-text-sm
         :type="showPassword ? (passwordVisible ? 'text' : 'password') : type" :value="value" @focus="handleFocus"
-        @blur="handleBlur" @input="handleInput" :disabled="disabled" :class="disabledClass()" />
+        @blur="handleBlur" @input="handleInput" :disabled="disabled" :class="disabledClass()" :readonly="readonly" />
 
       <span inline-flex items-center justify-center pl2 cursor-pointer v-if="suffixVisible">
         <slot name="suffix">

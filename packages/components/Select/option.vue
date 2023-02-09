@@ -1,4 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { defineProps, useSlots } from 'vue';
+const props = defineProps<{
+  label?: string
+  disabled?: boolean
+  value?: string
+}>()
+const slot = useSlots()
+
+
+</script>
 <template>
-  this is option
+  <li>
+    <span>{{ label }}</span>
+  </li>
 </template>
