@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { defineProps, defineEmits, ref, useSlots, computed } from 'vue'
 type TargetElement = HTMLInputElement | HTMLTextAreaElement
+defineOptions({
+  name: 'gzInput'
+})
 //props
 const props = withDefaults(defineProps<{
   placeholder?: string
@@ -113,3 +116,7 @@ console.log(props.disabled);
     </div>
   </div>
 </template>
+
+<style>
+
+</style>

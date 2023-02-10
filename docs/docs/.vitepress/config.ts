@@ -17,6 +17,9 @@ export default defineConfig({
         },
         {
           text:'checkBox 多选框',link:'/vitepress/components/checkBox'
+        },
+        {
+          text:'input 输入框',link:'/vitepress/components/input'
         }
     ]
   },
