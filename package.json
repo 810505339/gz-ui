@@ -1,7 +1,8 @@
 {
   "name": "vue-project",
   "workspaces": [
-    "./packages/*"
+    "packages/*",
+    "docs"
   ],
   "version": "0.0.0",
   "private": true,
@@ -10,7 +11,8 @@
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit"
+    "type-check": "vue-tsc --noEmit",
+    "docs:dev": "pnpm run -C docs dev"
   },
   "dependencies": {
     "@gz-ui/components": "workspace:*",
