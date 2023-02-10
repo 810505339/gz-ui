@@ -97,3 +97,19 @@ import Button from '@gz-ui/components/Button/button.vue'
 <gz-button type="warning" ghost ml4>Warning</gz-button>
 <gz-button type="error" ghost ml4>Error</gz-button>
 ```
+
+## Button Api
+### Button 属性
+
+| 属性名   |   说明   |    类型 | 默认值 |
+| -------- | :------: | ------: | ------ |
+| type     | 按钮类型 |  string | 无     |
+| disabled | 禁用状态 | boolean | false  |
+| size     |   尺寸   |  string | lg     |
+| ghost    |   文字   | boolean | false  |
+
+### Button 插槽
+
+| 插槽名  |     插槽名     |
+| ------- | :------------: |
+| default | 自定义默认内容 |

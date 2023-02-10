@@ -102,6 +102,9 @@ function handleClick() {
 
   <div flex justify-center>
     <div>镂空版本</div>
+    <Button >
+      <i i-heroicons-eye   block size="sm"></i>
+    </Button>
     <Button ghost>Default</Button>
     <Button type="primary" ghost>
       Primary

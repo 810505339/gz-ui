@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "docs:dev": "pnpm run -C docs dev"
+    "docs:dev": "pnpm run -C docs dev",
+    "docs:build": "pnpm run -C docs build"
   },
   "dependencies": {
     "@gz-ui/components": "workspace:*",
