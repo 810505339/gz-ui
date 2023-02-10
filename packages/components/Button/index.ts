@@ -1,8 +1,8 @@
-import { withInstall } from '@gz-ui/utils/index'
+import type { App, Plugin } from 'vue'
 import Button from './button.vue'
-console.log(withInstall(Button));
 
-export const GzButton = withInstall(Button)
-
-
-export default GzButton
+export const PgButton: Plugin = {
+  install(app: App) {
+    app.component(Button.name, Button)
+  }
+}

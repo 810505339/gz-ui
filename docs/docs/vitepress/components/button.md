@@ -1,5 +1,5 @@
 <script setup>
-import Button from '@gz-ui/components/Button/button.vue'
+import {Button} from '@gz-ui/components'
 </script>
 
 

@@ -1,4 +1,4 @@
-import { SFCWithInstall } from "./typescript"
+import type { SFCWithInstall } from "./typescript"
 
 export const withInstall = <T, E extends Record<string, any>>(
   main: T,
