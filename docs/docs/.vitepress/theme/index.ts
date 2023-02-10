@@ -1,11 +1,11 @@
 import DefaultTheme from 'vitepress/theme'
-
+import GzUi from '@gz-ui/ui'
 import 'uno.css'
 export default {
   ...DefaultTheme,
   // this is a Vue 3 functional component
 
-  setup() { //全局md文件注入
-
+  enhanceApp({ app }) { //全局md文件注入
+    app.use(GzUi)
   },
 }

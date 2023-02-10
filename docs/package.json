@@ -17,6 +17,6 @@
     "unplugin-vue-define-options": "^1.2.1"
   },
   "dependencies": {
-    "@gz-ui/components": "workspace:^1.0.0"
+    "@gz-ui/ui": "workspace:^1.0.0"
   }
 }

@@ -47,12 +47,12 @@ importers:
 
   docs:
     specifiers:
-      '@gz-ui/components': workspace:^1.0.0
+      '@gz-ui/ui': workspace:^1.0.0
       unocss: ^0.49.4
       unplugin-vue-define-options: ^1.2.1
       vitepress: 1.0.0-alpha.45
     dependencies:
-      '@gz-ui/components': link:../packages/components
+      '@gz-ui/ui': link:../packages/ui
     devDependencies:
       unocss: 0.49.4
       unplugin-vue-define-options: 1.2.1
@@ -63,6 +63,12 @@ importers:
       '@gz-ui/utils': workspace:^1.0.0
     dependencies:
       '@gz-ui/utils': link:../utils
+
+  packages/ui:
+    specifiers:
+      '@gz-ui/components': workspace:^1.0.0
+    dependencies:
+      '@gz-ui/components': link:../components
 
   packages/utils:
     specifiers: {}
