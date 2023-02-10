@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { inject, onMounted, ref, useSlots } from 'vue';
 import { checkboxGroupInjectionKey } from './checkboxGroup.vue';
+defineOptions({
+  name: 'gzCheckbox'
+})
 
 const props = withDefaults(defineProps<{
   checked?: boolean,
@@ -56,7 +59,7 @@ function checkboxSize() {
 }
 function checkboxIconSize() {
   const obj = {
-    sm: 'w12px h12px',
+    sm: 'w14px h14px',
     lg: 'w16px h16px'
   }
   return obj[props.size]
@@ -65,10 +68,10 @@ function checkboxIconSize() {
 <template>
   <label cursor-pointer flex items-center mx2 inline-flex :class="[checkboxIcon(), checkboxSize()]">
     <span inline-flex>
-      <span hover='border-violet-500' border="~ rounded-sm gray-300 " relative
+      <span hover='border-violet-500' border="~ rounded-sm   border-gray-500" relative
         :class="[checkboxBg(), checkboxIconSize()]" transition duration-500>
 
-        <i i-heroicons-check-20-solid w="10px" h="10px" inline-block absolute top="50%" left='50%' translate='-50%'
+        <i i-heroicons-check-20-solid w="12px" h="12px" inline-block absolute top="50%" left='50%' translate='-50%'
           text-white v-if="defaultChecked" font-bold></i>
       </span>
       <input type="checkbox" :checked="defaultChecked" @change="change" :disabled="disabled" z="-1" absolute w="0" h="0"

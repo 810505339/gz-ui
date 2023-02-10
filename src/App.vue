@@ -143,7 +143,7 @@ function handleClick() {
   <checkbox value="1" :checked="select">{{ checkedLabel }}</checkbox>
   <div>
     尺寸
-    <checkbox size="lg">大</checkbox>
+    <checkbox size="lg" >大</checkbox>
     <checkbox size="sm">小</checkbox>
   </div>
 

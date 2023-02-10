@@ -3,7 +3,9 @@ export const checkboxGroupInjectionKey = 'checkbox-group'
 </script>
 <script setup lang="ts">
 import { provide, ref } from 'vue';
-
+defineOptions({
+  name: 'gzCheckboxGroup'
+})
 
 
 const { value } = defineProps<{ value: Array<string | number> | null }>()

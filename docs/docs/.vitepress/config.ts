@@ -14,6 +14,9 @@ export default defineConfig({
     sidebar: [
         {
           text:'Button 按钮',link:'/vitepress/components/button'
+        },
+        {
+          text:'checkBox 多选框',link:'/vitepress/components/checkBox'
         }
     ]
   },
