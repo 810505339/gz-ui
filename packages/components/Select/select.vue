@@ -121,7 +121,7 @@ watch(() => props.value, (newVal) => {
     <Input :placeholder="placeholder" @click.stop="inputClick" :value="selectOption.label" readonly
       :disabled="disabled">
     <template #suffix>
-      <i i-heroicons-x-mark h12px w12px text-sm duration-300 v-if="isClear" @click="clear"></i>
+      <i i-heroicons-x-mark h12px w12px text-sm duration-300 v-if="isClear" @click.stop="clear"></i>
       <i h12px w12px text-sm i-heroicons-chevron-down transition-all duration-300 :class="iconClass" v-else></i>
     </template>
     </Input>
