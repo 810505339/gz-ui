@@ -260,3 +260,50 @@ const options2=[
     />
   </gz-select>
   </div>
+
+
+```html
+
+<div>
+  <gz-select v-model:value="value3" class="m-2" clearable   placeholder="Select" w="250px" :option="options" >
+    <gz-option
+      v-for="item in options3"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value"
+    />
+  </gz-select>
+  </div>
+
+  <script lang="ts" setup>
+import { ref } from 'vue'
+
+const value3 = ref('')
+
+
+const options3=[
+  {
+    value: 'Option1',
+    label: 'Option1',
+  },
+  {
+    value: 'Option2',
+    label: 'Option2',
+  },
+  {
+    value: 'Option3',
+    label: 'Option3',
+  },
+  {
+    value: 'Option4',
+    label: 'Option4',
+  },
+  {
+    value: 'Option5',
+    label: 'Option5',
+  },
+]
+</script>
+
+
+```

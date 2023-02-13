@@ -7,7 +7,7 @@ const props = defineProps<{
   value?: string
 }>()
 const optionInject = inject<any>(selectProvideKey)
-const slot = useSlots()
+const slotDefault = !!useSlots().default;
 defineOptions({
   name: 'GzOption'
 })
@@ -34,6 +34,7 @@ const disabledClass = computed(() => {
 <template>
   <li relative overflow-hidden h32px text-ellipsis leading-32px cursor-pointer @click="handleClick"
     :class="[selectClass,disabledClass]">
-    <span>{{ label }}</span>
+    <slot v-if="slotDefault" />
+    <span v-else>{{ label }}</span>
   </li>
 </template>

@@ -56,8 +56,6 @@ const isHovered = ref(false)
 
 
 const isClear = computed(() => {
-
-
   return props.clearable && isHovered.value && props.value
 })
 
