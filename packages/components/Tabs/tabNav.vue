@@ -1,12 +1,14 @@
 <script setup lang="ts">
 
-import { computed, ref, inject, type StyleValue, watch, nextTick, onMounted } from 'vue'
+import { computed, ref, inject, type StyleValue, watch, nextTick, h } from 'vue'
 import { TabsInjectionKey } from './tabs.vue'
 const props = withDefaults(defineProps<{
   navList?: any
 }>(), {
   navList: []
 })
+
+
 const Tabsinject = inject<any>(TabsInjectionKey)
 const offsetLeft = ref(0)
 const doms = ref(null)
@@ -20,9 +22,9 @@ function getOffsetLeft(newVal: string) {
   const targetList = doms.value! as HTMLElement[]
 
   const target = targetList.find((dom) => dom.getAttribute('active') === 'true')
-  
 
-  
+
+
   let offset = 0
   offset = (target!.clientWidth - 40) / 2
 
@@ -50,6 +52,9 @@ watch(() => Tabsinject.activeName.value, (newVal) => {
 }, {
   immediate: true
 })
+
+
+
 </script>
 
 
@@ -66,10 +71,10 @@ watch(() => Tabsinject.activeName.value, (newVal) => {
     ">
     <div :style="activeClass" bg-violet-500 h3px absolute w40px bottom-0 left-0 transition-all></div>
     <div v-for="(nav, index) in navList" :key="nav.uid" relative whitespace-nowrap leading-40px box-content
-      :class="[activeBgClass(nav)]" hover:text-violet-500 cursor-pointer px20px
-      @click="handleClick(nav, $event)" :active="nav.active" ref="doms">
+      :class="[activeBgClass(nav)]" hover:text-violet-500 cursor-pointer px20px @click="handleClick(nav, $event)"
+      :active="nav.active" ref="doms">
       {{ nav.label }}
-     
+      <component :is="nav.labelFn" v-if="!nav.label && nav.labelFn"></component>
     </div>
   </div>
 
