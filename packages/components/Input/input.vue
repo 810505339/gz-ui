@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
   showPassword?: boolean
   disabled?: boolean
   clearable?: boolean,
-  size: 'sm' | 'lg',
+  size?: 'sm' | 'lg',
   readonly?: boolean
 }>(), {
   type: 'text',
@@ -89,6 +89,10 @@ const showClearVisible = computed(() => {
 function disabledClass() {
   return `${props.disabled ? 'cursor-not-allowed select-none' : ''}`
 }
+
+const sizeClass = computed(() => {
+  return `${props.size === 'sm'}?'':''`
+})
 
 console.log(props.disabled);
 

@@ -7,3 +7,7 @@
   --vp-button-brand-hover-bg:#6d28d9;
 
 }
+.vp-doc ul, .vp-doc ol{
+  padding-left:0;
+  margin:0 0;
+}

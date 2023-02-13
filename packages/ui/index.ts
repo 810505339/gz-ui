@@ -2,9 +2,8 @@ import { GzInput } from '@gz-ui/components/Input/index'
 import { GzButton } from '@gz-ui/components/Button'
 import { GzCheckBoxGroup, GzCheckBox } from '@gz-ui/components/CheckBox'
 import { GzTag } from '@gz-ui/components/Tag'
-import { GzOption } from '@gz-ui/components/Select/option'
-import { GzSelect } from '@gz-ui/components/Select/select'
-import { GzTag } from '@gz-ui/components/Tag'
+import { GzOption,GzSelect } from '@gz-ui/components/Select'
+
 import './index.css'
 
 

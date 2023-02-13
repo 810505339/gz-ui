@@ -27,7 +27,7 @@ const selectClass = computed(() => {
 })
 
 const disabledClass = computed(() => {
-  return `${props.disabled ? 'cursor-not-allowed  text-gray-500' : 'hover:bg-gray-100'}`
+  return `${props.disabled ? 'cursor-not-allowed  text-gray-500' : 'dark:hover:bg-[#262727] hover:bg-gray-100'}`
 })
 
 </script>

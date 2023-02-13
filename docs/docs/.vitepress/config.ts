@@ -24,6 +24,10 @@ export default defineConfig({
         {
           text:'Tag 标签',link:'/vitepress/components/tag'
         }
+        ,
+        {
+          text:'Select 选择器',link:'/vitepress/components/select'
+        }
     ]
   },
   head: [
