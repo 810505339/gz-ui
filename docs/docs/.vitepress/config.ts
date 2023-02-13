@@ -16,10 +16,13 @@ export default defineConfig({
           text:'Button 按钮',link:'/vitepress/components/button'
         },
         {
-          text:'checkBox 多选框',link:'/vitepress/components/checkBox'
+          text:'CheckBox 多选框',link:'/vitepress/components/checkBox'
         },
         {
-          text:'input 输入框',link:'/vitepress/components/input'
+          text:'Input 输入框',link:'/vitepress/components/input'
+        },
+        {
+          text:'Tag 标签',link:'/vitepress/components/tag'
         }
     ]
   },
