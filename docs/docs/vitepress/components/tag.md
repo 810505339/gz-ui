@@ -90,7 +90,7 @@ function close(tag){
 | closable |    closable    | `boolean` | false  |
 | round    | Tag 是否为圆形 | `boolean` | false  |
 
-# Tag 事件
+## Tag 事件
 | 事件名 |         说明          | 参数 |
 | ------ | :-------------------: | ---: |
 | click  | 点击 Tag 时触发的事件 |    — |
