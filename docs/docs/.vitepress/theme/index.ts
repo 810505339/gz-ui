@@ -2,6 +2,7 @@ import DefaultTheme from 'vitepress/theme'
 import GzUi from '@gz-ui/ui'
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
+import './var.css'
 
 export default {
   ...DefaultTheme,

@@ -26,6 +26,7 @@ const emits = defineEmits<{
   (e: 'update:value', value: string): void
   (e: 'focus', event: FocusEvent): void
   (e: 'blur', event: FocusEvent): void
+  (e: 'clear'): void
 }>()
 //slot
 const slot = useSlots()
@@ -59,6 +60,7 @@ const handlePasswordVisible = () => {
 
 function handleClearVisible() {
   emits('update:value', '')
+  emits('clear')
 }
 
 
