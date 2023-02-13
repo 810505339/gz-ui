@@ -35,6 +35,10 @@ const emits = defineEmits<{
   (e: 'update:value', value: string): void
 }>()
 
+defineOptions({
+  name: 'GzSelect'
+})
+
 //是否展开
 const isOpen = ref(false)
 //获取option
@@ -61,7 +65,7 @@ function select(option: { label: string, value: string }) {
   selectOption.value = option
   setTimeout(() => {
     isOpen.value = false
-     emits('update:value', option.value)
+    emits('update:value', option.value)
   }, 100)
 
 }

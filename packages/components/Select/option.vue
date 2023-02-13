@@ -8,6 +8,9 @@ const props = defineProps<{
 }>()
 const optionInject = inject<any>(selectProvideKey)
 const slot = useSlots()
+defineOptions({
+  name: 'GzOption'
+})
 
 //fn
 function handleClick() {
