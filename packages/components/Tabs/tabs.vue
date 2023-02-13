@@ -22,10 +22,6 @@ const emits = defineEmits<{
 
 const slotProps = computed(() => {
   const slotsDefault = useSlots().default?.() ?? []
-
-
-
-
   return slotsDefault.map(item => {
 
     return { ...item.props, uid: uuidv4(), active: props.value === item.props!.name, labelFn: item.children!.label }
