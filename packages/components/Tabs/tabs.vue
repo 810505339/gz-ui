@@ -54,7 +54,6 @@ watch(() => props.value, (newVal) => {
 </script>
 
 <template>
-  {{ activeName }}
   <tab-nav :navList="slotProps" />
   <div px20px py10px>
     <slot></slot>

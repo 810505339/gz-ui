@@ -54,7 +54,7 @@ watch(() => Tabsinject.activeName.value, (newVal) => {
 
 
 <template>
-  <div mb15px p0 flex items-center h40px relative class="
+  <div mb15px p0 flex items-center h40px relative text-sm class="
     after-content-empty
     after-absolute 
     after-w100% 
