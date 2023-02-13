@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-
+  appearance:'dark',
   themeConfig: {
     siteTitle: 'gz-ui',
     nav: [
