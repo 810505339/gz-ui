@@ -304,6 +304,40 @@ const options3=[
   },
 ]
 </script>
-
-
 ```
+
+## 无可选项
+
+<div>
+  <gz-select w="250px" placeholder="Select"/>
+
+</div>
+
+```html
+<div>
+  <gz-select w="250px" placeholder="Select"/>
+</div>
+```
+
+## Select 属性
+
+| 属性名        |       说明       |      类型 | 默认值 |
+| ------------- | :--------------: | --------: | ------ |
+| v-model:value |   选中项绑定值   |   `Array` | —      |
+| disabled      |     是否多选     | `boolean` | false  |
+| clearable     | 是否可以清空选项 | `boolean` | false  |
+
+
+## Select 事件
+| 事件名         |                   说明                   |                           回调参数 |
+| -------------- | :--------------------------------------: | ---------------------------------: |
+| change         |           选中值发生变化时触发           |                  val，目前的选中值 |
+| clear          | 可清空的单选模式下用户点击清空按钮时触发 |                                  — |
+| visible-change |          下拉框出现/隐藏时触发           | val，出现则为 true，隐藏则为 false |
+
+## Select 插槽
+| 插槽名 |      说明       |                  子标签 |
+| ------ | :-------------: | ----------------------: |
+| —      | Option 组件列表 | `Option Group / Option` |
+| empty  | empty可空的文字 |                       — |
+

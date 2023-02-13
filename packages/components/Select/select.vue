@@ -13,7 +13,7 @@ export const selectProvideKey: InjectionKey<{
 
 </script>
 <script setup lang="ts">
-import { computed, provide, ref, type InjectionKey, type Ref, onMounted, watch } from 'vue';
+import { computed, provide, ref, type InjectionKey, type Ref, onMounted, watch, useSlots } from 'vue';
 import Input from '../Input/input.vue'
 import type { OnClickOutsideHandler } from '@vueuse/core'
 import { vOnClickOutside, vElementHover } from '@vueuse/components'
@@ -37,7 +37,9 @@ const props = withDefaults(defineProps<{
 
 const emits = defineEmits<{
   (e: 'update:value', value: string): void
-  (e: 'clear'): void
+  (e: 'clear'): void,
+  (e: 'visibleChange', val: boolean): void
+  (e: 'change', val: string): void
 }>()
 
 defineOptions({
@@ -51,12 +53,22 @@ const selectOption = ref({
   label: '',
   value: props.value
 })
+
+const slotDefault = !!useSlots().default
+const slotEmpty = !!useSlots().empty
+
 //
 const isHovered = ref(false)
 
 
 const isClear = computed(() => {
   return props.clearable && isHovered.value && props.value
+})
+
+
+
+const isEmpty = computed(() => {
+  return props?.option?.length <= 0 || !slotDefault
 })
 
 const dropdownHandler: OnClickOutsideHandler = (event) => {
@@ -78,6 +90,7 @@ function select(option: { label: string, value: string }) {
   setTimeout(() => {
     isOpen.value = false
     emits('update:value', option.value)
+    emits('change', option.value)
   }, 100)
 
 }
@@ -88,8 +101,7 @@ function onHover(state: boolean) {
 }
 
 function clear() {
-  selectOption.value = { label: '', value: '' }
-  emits('update:value', '')
+  select({ label: '', value: '' })
   emits('clear')
 }
 
@@ -111,6 +123,10 @@ watch(() => props.value, (newVal) => {
 
 })
 
+watch(() => isOpen.value, (value) => {
+  emits('visibleChange', value)
+})
+
 
 </script>
 <template>
@@ -126,9 +142,16 @@ watch(() => props.value, (newVal) => {
     <transition tag="div" text-center name="list" mode="out-in">
       <ul v-if="isOpen" v-on-click-outside.bubble="dropdownHandler" w="100%" bg-white py2 absolute z-10 shadow
         dark:bg="#161618" dark:text="white" rounded>
-        <slot></slot>
+
+        <div v-if="isEmpty" py10>
+          <slot name="empty" v-if="slotEmpty"></slot>
+          <span v-else>没有可选项</span>
+        </div>
+        <slot v-else></slot>
       </ul>
+
     </transition>
+
   </div>
 </template>
 <style scoped>
