@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@gz-ui/components': workspace:*
+      '@gz-ui/ui': workspace:^1.0.0
       '@iconify/json': ^2.2.18
       '@popperjs/core': ^2.11.6
       '@types/node': ^18.11.19
@@ -25,6 +26,7 @@ importers:
       vue-tsc: ^1.0.24
     dependencies:
       '@gz-ui/components': link:packages/components
+      '@gz-ui/ui': link:packages/ui
       '@popperjs/core': 2.11.6
       '@vueuse/components': 9.12.0_vue@3.2.47
       '@vueuse/core': 9.12.0_vue@3.2.47
@@ -1066,7 +1068,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.1.1
+      vite: 4.1.1_@types+node@18.11.19
       vue: 3.2.47
     dev: true
 
