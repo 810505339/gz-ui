@@ -29,9 +29,9 @@ function getOffsetLeft(newVal: string) {
 
 
   let offset = 0
-  offset = (target!.clientWidth - 40) / 2
+  offset = (target?.clientWidth - 40) / 2
 
-  offsetLeft.value = target!.offsetLeft + offset
+  offsetLeft.value = target?.offsetLeft + offset
 }
 
 //classFn
