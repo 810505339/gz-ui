@@ -13,28 +13,46 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: 'Button 按钮', link: '/vitepress/components/button'
+            text:'Feedback 反馈组件',
+            collapsed:true,
+            items:[
+              {
+                text:'Alert提示',
+                link: '/vitepress/components/alter'
+              },
+            ]
+            
       },
       {
-        text: 'CheckBox 多选框', link: '/vitepress/components/checkBox'
+        text:'Form 表单组件',
+        items:[
+          {
+            text: 'Button 按钮', link: '/vitepress/components/button'
+          },
+          {
+            text: 'CheckBox 多选框', link: '/vitepress/components/checkBox'
+          },
+          {
+            text: 'Input 输入框', link: '/vitepress/components/input'
+          },
+          {
+            text: 'Tag 标签', link: '/vitepress/components/tag'
+          }
+          ,
+          {
+            text: 'Select 选择器', link: '/vitepress/components/select'
+          }
+          ,
+          {
+            text: 'tabs 标签页', link: '/vitepress/components/tabs'
+          },
+          {
+            text:'Badge 徽章',link:'/vitepress/components/badge'
+          }
+        ],
+        collapsed:true
       },
-      {
-        text: 'Input 输入框', link: '/vitepress/components/input'
-      },
-      {
-        text: 'Tag 标签', link: '/vitepress/components/tag'
-      }
-      ,
-      {
-        text: 'Select 选择器', link: '/vitepress/components/select'
-      }
-      ,
-      {
-        text: 'tabs 标签页', link: '/vitepress/components/tabs'
-      },
-      {
-        text:'Badge 徽章',link:'/vitepress/components/badge'
-      }
+      
     ]
   },
   head: [
