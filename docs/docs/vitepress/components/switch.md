@@ -75,3 +75,19 @@
   const value4=ref(true)
 </script>
 ```
+
+## 属性
+
+| 属性名        |               说明                |       类型 | 默认值 |
+| ------------- | :-------------------------------: | ---------: | ------ |
+| v-model:value |              绑定值               | `boolean ` | ——     |
+| disabled      |             是否禁用              | `boolean ` | ——     |
+| size          |           switch 的大小           |  `string ` | ——     |
+| active-text   |      switch 打开时的文字描述      |  `string ` | ——     |
+| inactive-text | switch 的状态为 `off`时的文字描述 |  `string ` | ——     |
+
+
+## 事件
+| 事件名 |              说明               |       类型 |
+| ------ | :-----------------------------: | ---------: |
+| change | switch 状态发生变化时的回调函数 | `Function` |

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import { computed, ref, watch } from 'vue'
 defineOptions({
   name: 'gzSwitch'
@@ -17,7 +16,8 @@ const props = withDefaults(defineProps<{
 })
 
 const emits = defineEmits<{
-  (e: 'update:value', value: boolean): void
+  (e: 'update:value', value: boolean): void,
+  (e: 'change', val: boolean): void
 }>()
 
 const checked = ref(props.value) //是否被选中
@@ -66,6 +66,10 @@ watch(() => props.value, (newValue) => {
 
 }, {
   immediate: true
+})
+
+watch(() => checked.value, (newValue) => {
+  emits('change', newValue)
 })
 
 </script>
