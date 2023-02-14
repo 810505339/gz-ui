@@ -15,6 +15,9 @@ const doms = ref(null)
 
 //fn
 function handleClick(nav: any, e: MouseEvent) {
+  if (nav.disabled) {
+    return
+  }
   Tabsinject.updateActive(nav.name)
 }
 
@@ -45,6 +48,11 @@ const activeBgClass = (nav: any) => {
   return `${nav.active ? 'text-violet-500' : ''}`
 }
 
+const disabledClass = (nav: any) => {
+  return `${nav.disabled ? 'select-none cursor-not-allowed' : 'cursor-pointer'}`
+
+}
+
 watch(() => Tabsinject.activeName.value, (newVal) => {
   nextTick(() => {
     getOffsetLeft(newVal)
@@ -71,7 +79,7 @@ watch(() => Tabsinject.activeName.value, (newVal) => {
     ">
     <div :style="activeClass" bg-violet-500 h3px absolute w40px bottom-0 left-0 transition-all></div>
     <div v-for="(nav, index) in navList" :key="nav.uid" relative whitespace-nowrap leading-40px box-content
-      :class="[activeBgClass(nav)]" hover:text-violet-500 cursor-pointer px20px @click="handleClick(nav, $event)"
+      :class="[activeBgClass(nav), disabledClass(nav)]" hover:text-violet-500 px20px @click="handleClick(nav, $event)"
       :active="nav.active" ref="doms">
       {{ nav.label }}
       <component :is="nav.labelFn" v-if="!nav.label && nav.labelFn"></component>

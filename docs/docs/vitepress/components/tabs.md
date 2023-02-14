@@ -2,6 +2,7 @@
 import {ref} from 'vue'
 const activeName = ref('fourth')
 const activeName1 = ref('first')
+const activeName2 = ref('first')
 </script>
 # Tabs 标签页
 
@@ -85,15 +86,47 @@ const activeName = ref('fourth')
 import {ref} from 'vue'
 const activeName1 = ref('first')
 </script>
-
 ```
+
+## 设置是否可选中面板
+可以通过`disabled`属性是否禁止选中
+
+<gz-tabs v-model:value="activeName2">
+    <gz-tab-pane label="User" name="first" >User</gz-tab-pane>
+    <gz-tab-pane label="Config" name="second" disabled="true">Config</gz-tab-pane>
+</gz-tabs>
+
+```html
+
+<gz-tabs v-model:value="activeName2">
+    <gz-tab-pane label="User" name="first" >User</gz-tab-pane>
+    <gz-tab-pane label="Config" name="second" disabled="true">Config</gz-tab-pane>
+</gz-tabs>
+
+<script setup lang="ts">
+import {ref} from 'vue'
+const activeName2 = ref('first')
+</script>
+```
+
+
+
 
 ## Tabs 属性
 
-| 属性名        |       说明       |      类型 | 默认值 |
-| ------------- | :--------------: | --------: | ------ |
-| v-model:value |   绑定值，选中选项卡的 name   |   `string ` | —      |
-| disabled      |     是否多选     | `boolean` | false  |
-| clearable     | 是否可以清空选项 | `boolean` | false  |
+| 属性名        |           说明            |      类型 | 默认值 |
+| ------------- | :-----------------------: | --------: | ------ |
+| v-model:value | 绑定值，选中选项卡的 name | `string ` | —      |
+
 
 ## Tabs 事件
+
+
+## Tab-pane 属性
+
+
+| 属性名        |           说明            |      类型 | 默认值 |
+| ------------- | :-----------------------: | --------: | ------ |
+| v-model:value | 绑定值，选中选项卡的 name | `string ` | —      |
+| name      |         选项卡标题          | `boolean` | false  |
+| clearable     |     是否可以清空选项      | `boolean` | false  |

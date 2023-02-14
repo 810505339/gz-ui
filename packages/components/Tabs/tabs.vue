@@ -2,7 +2,7 @@
 export const TabsInjectionKey = 'tabs'
 </script>
 <script setup lang="ts">
-import { ref, useSlots, computed, provide, watch, getCurrentInstance } from 'vue'
+import { ref, useSlots, computed, provide, watch } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 import tabNav from './tabNav.vue'
 
@@ -22,6 +22,8 @@ const emits = defineEmits<{
 
 const slotProps = computed(() => {
   const slotsDefault = useSlots().default?.() ?? []
+  console.log(slotsDefault);
+  
   return slotsDefault.map(item => {
 
     return { ...item.props, uid: uuidv4(), active: props.value === item.props!.name, labelFn: item.children!.label }
