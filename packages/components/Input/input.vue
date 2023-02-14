@@ -94,7 +94,7 @@ const sizeClass = computed(() => {
   return `${props.size === 'sm'}?'':''`
 })
 
-console.log(props.disabled);
+
 
 </script>
 <template>

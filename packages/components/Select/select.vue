@@ -72,7 +72,7 @@ const isEmpty = computed(() => {
 })
 
 const dropdownHandler: OnClickOutsideHandler = (event) => {
-  console.log(event)
+
   isOpen.value = false
 }
 
@@ -117,7 +117,7 @@ provide(selectProvideKey, {
 watch(() => props.value, (newVal) => {
   const index = props.option?.findIndex((item) => item.value === props.value)
   if (!!~index) {
-    console.log(props.option[index]);
+   
     select(props.option[index])
   }
 

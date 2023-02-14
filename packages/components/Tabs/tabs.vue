@@ -22,7 +22,7 @@ const emits = defineEmits<{
 
 const slotProps = computed(() => {
   const slotsDefault = useSlots().default?.() ?? []
-  console.log(slotsDefault);
+  
   
   return slotsDefault.map(item => {
 

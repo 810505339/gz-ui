@@ -31,7 +31,7 @@ function toggleCheckbox(
   }
   valueSetRef.value = groupValue
   emits('update:value', groupValue)
-  console.log(groupValue);
+ 
 
 }
 provide(checkboxGroupInjectionKey, {
