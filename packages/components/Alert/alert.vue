@@ -43,11 +43,26 @@ const classByType = computed(() => {
   return obj[props.type]
 })
 
+//
+const iconClassByType = computed(() => {
+  const obj = {
+    default: ``,
+    info: `heroicons:information-circle-20-solid`,
+    success: `heroicons:check-circle-20-solid`,
+    warning: `heroicons:exclamation-circle-20-solid`,
+    error: `heroicons:x-circle-20-solid`
+  }
+
+  return obj[props.type]
+})
+
 </script>
 
 <template>
   <div w="100%" :class="[classByType]" text-white rounded text-sm px20px py10px box-border flex shadow items-center
     relative v-if="show" transition-all>
+
+
     <slot v-if="titleSlot" name="title"></slot>
     <div v-else>{{ title }}</div>
 
