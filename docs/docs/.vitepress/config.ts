@@ -12,17 +12,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/810505339/gz-ui' }
     ],
     sidebar: [
-      {
-            text:'Feedback 反馈组件',
-            collapsed:true,
-            items:[
-              {
-                text:'Alert提示',
-                link: '/vitepress/components/alter'
-              },
-            ]
-            
-      },
+     
       {
         text:'Form 表单组件',
         items:[
@@ -48,10 +38,24 @@ export default defineConfig({
           },
           {
             text:'Badge 徽章',link:'/vitepress/components/badge'
+          },
+          {
+            text:'Switch 开关',link:'/vitepress/components/switch'
           }
         ],
         collapsed:true
       },
+      {
+        text:'Feedback 反馈组件',
+        collapsed:true,
+        items:[
+          {
+            text:'Alert提示',
+            link: '/vitepress/components/alter'
+          },
+        ]
+        
+  },
       
     ]
   },
