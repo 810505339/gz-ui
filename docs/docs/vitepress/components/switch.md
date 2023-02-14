@@ -63,5 +63,15 @@
 ## 文字描述
 使用`active-text`属性与`inactive-text`属性来设置开关的文字描述。
 
-<gz-switch v-model:value="value1"  active-text="是"
+<gz-switch v-model:value="value4"  active-text="是"
     inactive-text="否" />
+
+```html
+<gz-switch v-model:value="value4"  active-text="是"
+    inactive-text="否" />
+
+<script setup lang="ts">
+  import { ref} from 'vue'
+  const value4=ref(true)
+</script>
+```

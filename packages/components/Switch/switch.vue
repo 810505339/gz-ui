@@ -53,6 +53,14 @@ const disabledClass = computed(() => {
   return `${props.disabled ? 'cursor-not-allowed select-none opacity-80' : ''}`
 })
 
+const showText = computed(() => {
+  return checked.value ? props.activeText : props.inactiveText
+})
+
+const textClass = computed(() => {
+  return `${!checked.value ? props.size === 'sm' ? 'left-[calc(100%-17px)]' : 'left-[calc(100%-21px)]' : ' left-1px'}`
+})
+
 watch(() => props.value, (newValue) => {
   checked.value = newValue
 
@@ -67,8 +75,14 @@ watch(() => props.value, (newValue) => {
     <input hidden type="checkbox" :checked="checked" />
     <span box-border relative inline-flex items-center rounded-xl border="~ #4c4d4f"
       :class="[checkedBgClass, sizeBgClass, disabledClass]" cursor-pointer @click="handleClick">
+
+      <div v-if="activeText || inactiveText" absolute flex items-center justify-center transition-500 transition-all
+        :class="[textClass]">
+        <span>{{ showText }}</span>
+      </div>
+
       <div rounded-full bg-white border="~" absolute flex items-center justify-center :class="[actionClass, sizeClass]"
-        transition-all transition-00 shadow></div>
+        transition-500 transition-all shadow></div>
     </span>
   </div>
 </template>
