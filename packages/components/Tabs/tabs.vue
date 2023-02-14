@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid'
 import tabNav from './tabNav.vue'
 
 
+
 const props = withDefaults(defineProps<{
   value?: string,
 }>(), {
@@ -16,14 +17,15 @@ const activeName = ref(props.value)
 
 const emits = defineEmits<{
   (e: 'tabClick', pane: string, ev: Event): void,
+  (e: 'tabChange', name: string): void,
   (e: 'update:value', name: string): void
 }>()
 
 
 const slotProps = computed(() => {
   const slotsDefault = useSlots().default?.() ?? []
-  
-  
+
+
   return slotsDefault.map(item => {
 
     return { ...item.props, uid: uuidv4(), active: props.value === item.props!.name, labelFn: item.children!.label }
@@ -41,13 +43,17 @@ defineOptions({
 function updateActive(name: string) {
   activeName.value = name
   emits('update:value', name)
-
+  emits('tabChange', name)
+}
+function tabClick(nav: any, e: MouseEvent) {
+  emits('tabClick', nav, e)
 }
 
 
 provide(TabsInjectionKey, {
   activeName,
-  updateActive
+  updateActive,
+  tabClick
 })
 
 watch(() => props.value, (newVal) => {

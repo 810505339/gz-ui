@@ -19,6 +19,7 @@ function handleClick(nav: any, e: MouseEvent) {
     return
   }
   Tabsinject.updateActive(nav.name)
+  Tabsinject.tabClick(nav, e)
 }
 
 function getOffsetLeft(newVal: string) {

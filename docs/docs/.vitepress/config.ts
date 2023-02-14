@@ -30,7 +30,10 @@ export default defineConfig({
       }
       ,
       {
-        text: 'tabs', link: '/vitepress/components/tabs'
+        text: 'tabs 标签页', link: '/vitepress/components/tabs'
+      },
+      {
+        text:'Badge 徽章',link:'/vitepress/components/badge'
       }
     ]
   },
