@@ -10,8 +10,7 @@ const props = withDefaults(defineProps<{
   title: string,
   type?: 'success' | 'warning' | 'info' | 'error' | 'default',
   closable?: boolean,
-  closeText?: string
-
+  closeText?: string,
 }>(), {
   type: 'default',
   closable: true
