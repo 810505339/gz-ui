@@ -24,7 +24,7 @@ function handleClick(nav: any, e: MouseEvent) {
 function getOffsetLeft(newVal: string) {
   const targetList = doms.value! as HTMLElement[]
 
-  const target = targetList.find((dom) => dom.getAttribute('active') === 'true')
+  const target = targetList?.find((dom) => dom.getAttribute('active') === 'true')
 
 
 
