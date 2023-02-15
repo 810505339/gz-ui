@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  appearance:'dark',
+  lastUpdated: true,
+  appearance: 'dark',
   themeConfig: {
     siteTitle: 'gz-ui',
     nav: [
@@ -12,10 +13,10 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/810505339/gz-ui' }
     ],
     sidebar: [
-     
+
       {
-        text:'Form 表单组件',
-        items:[
+        text: 'Form 表单组件',
+        items: [
           {
             text: 'Button 按钮', link: '/vitepress/components/button'
           },
@@ -37,26 +38,30 @@ export default defineConfig({
             text: 'tabs 标签页', link: '/vitepress/components/tabs'
           },
           {
-            text:'Badge 徽章',link:'/vitepress/components/badge'
+            text: 'Badge 徽章', link: '/vitepress/components/badge'
           },
           {
-            text:'Switch 开关',link:'/vitepress/components/switch'
+            text: 'Switch 开关', link: '/vitepress/components/switch'
           }
         ],
-        collapsed:true
+        collapsed: true
       },
       {
-        text:'Feedback 反馈组件',
-        collapsed:true,
-        items:[
+        text: 'Feedback 反馈组件',
+        collapsed: true,
+        items: [
           {
-            text:'Alert提示',
+            text: 'Alert提示',
             link: '/vitepress/components/alter'
           },
+          {
+            text: 'Message消息提示',
+            link: '/vitepress/components/message'
+          }
         ]
-        
-  },
-      
+
+      },
+
     ]
   },
   head: [

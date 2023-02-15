@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: gz-ui
-  text: vue3 script setup  typescrt 的组件库
+  text: vue3  typescrt 的组件库
   tagline: Lorem ipsum...
  
   actions:
