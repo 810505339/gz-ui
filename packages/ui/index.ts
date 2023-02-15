@@ -7,7 +7,8 @@ import { GzBadge } from '@gz-ui/components/Badge'
 import { GzOption, GzSelect } from '@gz-ui/components/Select'
 import { GzTabPane, GzTabs } from '@gz-ui/components/Tabs'
 import { GzSwitch } from '@gz-ui/components/Switch'
-import { GzMessageProvider } from '@gz-ui/components/Message'
+import { GzMessageProvider, useMessage } from '@gz-ui/components/Message'
+import { GzDialog } from '@gz-ui/components/Dialog'
 
 import './index.css'
 
@@ -17,7 +18,7 @@ import type { App } from 'vue'
 
 const Installer = {
   install(app: App) {
-    [GzButton, GzCheckBoxGroup, GzCheckBox, GzInput, GzTag, GzOption, GzSelect, GzTabPane, GzTabs, GzBadge, GzAlert, GzSwitch, GzMessageProvider].forEach((c) => {
+    [GzButton, GzCheckBoxGroup, GzCheckBox, GzInput, GzTag, GzOption, GzSelect, GzTabPane, GzTabs, GzBadge, GzAlert, GzSwitch, GzMessageProvider,GzDialog].forEach((c) => {
       app.use(c)
     })
   }
@@ -25,5 +26,5 @@ const Installer = {
 
 export default Installer
 export {
-  GzButton
+    useMessage
 }

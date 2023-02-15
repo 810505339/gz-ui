@@ -57,6 +57,10 @@ export default defineConfig({
           {
             text: 'Message消息提示',
             link: '/vitepress/components/message'
+          },
+          {
+            text:'Dialog对话框',
+            link: '/vitepress/components/dialog'
           }
         ]
 
