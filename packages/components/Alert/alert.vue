@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, useSlots } from 'vue';
 
-
-
 defineOptions({
   name: 'gzAlert'
 })
@@ -66,7 +64,7 @@ const iconClassByType = computed(() => {
       <span v-else>{{ title }}</span>
     </div>
 
-    <div   text-sm cursor-pointer @click="handleClose" v-if="closable">
+    <div text-sm cursor-pointer @click="handleClose" v-if="closable">
       {{ closeText }}
       <i block i-heroicons-x-mark v-if="!closeText"></i>
     </div>

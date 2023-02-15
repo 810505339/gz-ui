@@ -3,6 +3,7 @@
   const value1=ref(true)
   const value2=ref(true)
   const value3=ref(true)
+  const value4=ref(true)
 </script>
 
 # Switch 开关
