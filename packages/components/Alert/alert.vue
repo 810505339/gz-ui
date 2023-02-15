@@ -59,7 +59,7 @@ const iconClassByType = computed(() => {
 <template>
   <div :class="[classByType]" text-white rounded text-sm px20px py10px box-border flex shadow items-center relative
     v-if="show" transition-all justify-between>
-    <div pr10px>
+    <div :class="{ 'pr10px': closable }">
       <slot v-if="titleSlot" name="title"></slot>
       <span v-else>{{ title }}</span>
     </div>

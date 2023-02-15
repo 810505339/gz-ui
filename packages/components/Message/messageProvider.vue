@@ -12,6 +12,7 @@ export interface MessageReactive {
   showIcon?: boolean
   onClose?: () => void
   destroy: () => void
+  type?: string
 }
 
 interface PrivateMessageReactive extends MessageReactive {
@@ -30,7 +31,7 @@ defineOptions({
 
 
 const messageList = ref<PrivateMessageReactive[]>([])
- const messageRefs = ref()
+const messageRefs = ref()
 const api = {
   create(content: ContentType, options?: MessageOptions) {
     return create(content, { type: 'default', ...options })
@@ -62,7 +63,7 @@ function create(content: ContentType, options?: MessageOptions) {
       if (!!~index) {
         //todo
         console.log(messageRefs.value);
-        
+
         messageRefs.value[key]?.hide()
       }
     }
@@ -78,10 +79,10 @@ provide(messageApiInjectionKey, api)
 
 <template>
   <slot></slot>
-  <Teleport to="body" v-if="messageList.length">
-    <div fixed z="60000" flex items-center flex-col top="12px" h="0" left="0" right="0">
+  <Teleport to="body">
+    <div fixed z="60000" flex items-center flex-col top="12px" h="0" left="0" right="0" v-if="messageList.length">
       <messageEnvironment v-for="message in messageList" :key="message.key" :content="message.content"
-        :closable="message.closable" transition-all translate-y-0 ref="messageRefs" />
+        :closable="message.closable" transition-all translate-y-0 ref="messageRefs" :type="message.type" />
     </div>
   </Teleport>
 </template>
