@@ -7,13 +7,13 @@ defineOptions({
   name: 'gzAlert'
 })
 const props = withDefaults(defineProps<{
-  title: string,
+  title?: string,
   type?: 'success' | 'warning' | 'info' | 'error' | 'default',
   closable?: boolean,
   closeText?: string,
 }>(), {
   type: 'default',
-  closable: true
+  closable: false
 })
 
 
@@ -59,17 +59,17 @@ const iconClassByType = computed(() => {
 </script>
 
 <template>
-  <div w="100%" :class="[classByType]" text-white rounded text-sm px20px py10px box-border flex shadow items-center
-    relative v-if="show" transition-all>
+  <div :class="[classByType]" text-white rounded text-sm px20px py10px box-border flex shadow items-center relative
+    v-if="show" transition-all justify-between>
+    <div pr10px>
+      <slot v-if="titleSlot" name="title"></slot>
+      <span v-else>{{ title }}</span>
+    </div>
 
-
-    <slot v-if="titleSlot" name="title"></slot>
-    <div v-else>{{ title }}</div>
-
-    <span absolute top="50%" right="6px" translate="-50%" text-sm cursor-pointer @click="handleClose" v-if="closable">
+    <div   text-sm cursor-pointer @click="handleClose" v-if="closable">
       {{ closeText }}
       <i block i-heroicons-x-mark v-if="!closeText"></i>
-    </span>
+    </div>
 
 
   </div>

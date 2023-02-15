@@ -3,7 +3,9 @@
   const message=useMessage()
 
   function handleClick(){
-  message.info('this is info')
+  message.info('this is info',{
+    closable:true
+  })
   }
 </script>
 

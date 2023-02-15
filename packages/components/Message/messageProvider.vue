@@ -1,7 +1,7 @@
 <script lang="ts">
 import type { VNodeChild } from 'vue'
 import type { MessageOptions } from './types';
-type ContentType = string | (() => VNodeChild)
+type ContentType = string
 export const messageApiInjectionKey = 'message-api'
 
 export interface MessageReactive {
@@ -21,6 +21,7 @@ interface PrivateMessageReactive extends MessageReactive {
 <script setup lang="ts">
 import { ref, provide } from 'vue';
 import { v4 as uuidv4 } from 'uuid';
+import messageEnvironment from './messageEnvironment.vue'
 
 defineOptions({
   name: 'gzMessageProvider'
@@ -46,9 +47,7 @@ const api = {
   error(content: ContentType, options?: MessageOptions) {
     return create(content, { ...options, type: 'error' })
   },
-  loading(content: ContentType, options?: MessageOptions) {
-    return create(content, { ...options, type: 'loading' })
-  }
+
 }
 
 function create(content: ContentType, options?: MessageOptions) {
@@ -78,8 +77,9 @@ provide(messageApiInjectionKey, api)
 <template>
   <slot></slot>
   <Teleport to="body" v-if="messageList.length">
-    <div>
-      <div v-for="message in messageList" :key="message.key">{{ message.key }}</div>
+    <div fixed z="60000" flex items-center flex-col top="12px" left="0" right="0">
+      <messageEnvironment v-for="message in messageList" :key="message.key" :content="message.content"
+        :closable="message.closable" />
     </div>
   </Teleport>
 </template>

@@ -16,20 +16,20 @@ Alert 组件不属于浮层元素，不会自动消失或关闭。
 
 Alert 组件提供四种类型，由 `type` 属性指定。
 
-<gz-alert title="default alert"  my20px/>
-<gz-alert title="success alert" type="success" my20px/>
-<gz-alert title="info  alert" type="info" my20px/>
-<gz-alert title="warning  alert" type="warning" my20px/>
-<gz-alert title="error  alert" type="error" my20px/>
+<gz-alert title="default alert" closable  my20px />
+<gz-alert title="success alert" type="success" closable  my20px/>
+<gz-alert title="info  alert" type="info" closable my20px/>
+<gz-alert title="warning  alert" type="warning" closable my20px/>
+<gz-alert title="error  alert" type="error" closable my20px/>
 
 
 ```html
 
-<gz-alert title="default alert"  my20px/>
-<gz-alert title="success alert" type="success" my20px/>
-<gz-alert title="info  alert" type="info" my20px/>
-<gz-alert title="warning  alert" type="warning" my20px/>
-<gz-alert title="error  alert" type="error" my20px/>
+<gz-alert title="default alert" closable  my20px/>
+<gz-alert title="success alert" type="success" closable my20px/>
+<gz-alert title="info  alert" type="info" closable my20px/>
+<gz-alert title="warning  alert" type="warning"  closable my20px/>
+<gz-alert title="error  alert" type="error" closable my20px/>
 
 ```
 
@@ -44,7 +44,7 @@ Alert 组件提供四种类型，由 `type` 属性指定。
     这是title 插槽
   </template>
 </gz-alert>
-<gz-alert title="info  alert" type="info" closeText="close"  my20px @close="handleClose"/>
+<gz-alert title="info  alert" type="info" closeText="close" closable  my20px @close="handleClose"/>
 
 
 ```html 
@@ -53,7 +53,7 @@ Alert 组件提供四种类型，由 `type` 属性指定。
     这是title 插槽
   </template>
 </gz-alert>
-<gz-alert title="info  alert" type="info" closeText="close"  my20px @close="handleClose"/>
+<gz-alert title="info  alert" type="info" closeText="close" closable  my20px @close="handleClose"/>
 
 <script setup lang="ts">
   function handleClose(){
@@ -68,7 +68,7 @@ Alert 组件提供四种类型，由 `type` 属性指定。
 | -------- | :----------: | --------: | ------ |
 | title    | Alert 标题。 |  `string` | —      |
 | type     | Alert 类型。 |  `string` | —      |
-| closable | 是否可以关闭 | `boolean` | `true` |
+| closable | 是否可以关闭 | `boolean` | `false` |
 
 ### 事件
 

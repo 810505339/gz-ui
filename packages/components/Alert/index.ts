@@ -6,3 +6,5 @@ export const GzAlert: Plugin = {
     app.component(Alert.name, Alert)
   }
 }
+
+
