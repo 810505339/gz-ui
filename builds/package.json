@@ -1,0 +1,15 @@
+{
+  "name": "@gz-ui/builds",
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@gz-ui/components": "workspace:*"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "^1.7.3"
+  }
+}

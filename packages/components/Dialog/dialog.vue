@@ -4,7 +4,6 @@ let zIndex = ref(2023)
 
 <script setup lang="ts">
 
-import { e } from 'unocss';
 import { computed, onMounted, useSlots, watch, ref } from 'vue';
 defineOptions({
   name: 'gzDialog'

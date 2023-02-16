@@ -1,15 +1,29 @@
 {
   "name": "@gz-ui/ui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.9",
+  "description": "vue3 script setup 组件库",
+  "main": "./dist/gz-ui.mjs",
+  "types": "./dist/env.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "gz",
+    "gz-ui",
+    "GZUI",
+    "vue3-gz-ui"
+  ],
+  "author": "xm810505339",
   "license": "ISC",
   "dependencies": {
-    "@gz-ui/components": "workspace:^1.0.0"
+    
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+   
   }
 }
