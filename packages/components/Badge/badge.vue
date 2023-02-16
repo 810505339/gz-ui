@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
   isDot: false,
   type: 'default'
 })
-console.log(props.isDot);
+
 
 //classFN
 
