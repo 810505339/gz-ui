@@ -18,6 +18,6 @@
     "vitepress": "1.0.0-alpha.45"
   },
   "dependencies": {
-    "@gz-ui/ui": "^1.0.8"
+    "@gz-ui/ui": "npm:@gz-ui/ui@latest"
   }
 }

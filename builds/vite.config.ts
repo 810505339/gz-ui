@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: './index.ts',
-      name: 'MyLib',
+      name: '@gz-ui/ui',
       formats: ['es'],
       // the proper extensions will be added
       fileName: 'gz-ui',

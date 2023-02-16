@@ -1,6 +1,6 @@
 {
   "name": "@gz-ui/ui",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "vue3 script setup 组件库",
   "main": "./dist/gz-ui.mjs",
   "types": "./dist/env.d.ts",
