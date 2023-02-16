@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { useMessage } from '@gz-ui/ui'
+  import { useMessage } from '@gz-ui/builds'
   const message=useMessage()
 
   function handleClick(){
