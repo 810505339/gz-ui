@@ -51,6 +51,9 @@ export default defineConfig({
             },
             {
               text: 'Switch 开关', link: '/vitepress/components/switch'
+            },
+            {
+              text: 'datePicker 时间', link: '/vitepress/components/datePicker'
             }
           ],
           collapsed: true
