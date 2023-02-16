@@ -12,7 +12,7 @@ hero:
       link: /vitepress/guide/install
     - theme: alt
       text: View on GitHub
-      link: https://github.com/810505339/vite-interview
+      link: https://github.com/810505339/gz-ui
 features:
   - title: "Vite: The DX that can't be beat"
     details: Feel the speed of Vite. Instant server start and lightning fast HMR that stays fast regardless of the app size.
