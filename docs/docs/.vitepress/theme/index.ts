@@ -3,7 +3,6 @@ import '@unocss/reset/tailwind.css'
 import 'uno.css'
 import './var.css'
 import GzUi from '@gz-ui/builds'
-import '@gz-ui/ui/dist/style.css'
 import MyLayout from '../../vitepress/MyLayout.vue'
 export default {
   ...DefaultTheme,
