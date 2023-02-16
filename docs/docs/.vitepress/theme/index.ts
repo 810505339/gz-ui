@@ -10,7 +10,7 @@ export default {
   Layout: MyLayout,
   // this is a Vue 3 functional component
   setup() {
-    console.log(1);
+   
 
   },
   enhanceApp({ app }) { //全局md文件注入
