@@ -3,13 +3,13 @@ layout: home
 
 hero:
   name: gz-ui
-  text: 
-  tagline: 基于vue3 script setup typescript
+  text: 基于vue3 script setup typescript
+  tagline: 了解更多...
  
   actions:
     - theme: brand
-      text: Get Started
-      link: /vitepress/components/button
+      text: 开始使用
+      link: /vitepress/guide/install
     - theme: alt
       text: View on GitHub
       link: https://github.com/810505339/vite-interview
