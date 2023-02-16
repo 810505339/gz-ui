@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { useMessage } from '@gz-ui/components'
+  import { useMessage } from '@gz-ui/ui'
   const message=useMessage()
 
   function handleClick(){
@@ -118,15 +118,15 @@
 ## Message API
 ### Message 配置项
 
-| 属性名   |   说明   |    类型 | 默认值 |
-| -------- | :------: | ------: | ------ |
-| type | 消息类型 | `string` | `default` |
-| duration     |   显示时间，单位为毫秒。 设为 0 则不会自动关闭   |  `number` | 3000     |
-| closable    |   是否可以关闭   | `boolean` | false  |
+| 属性名   |                     说明                     |      类型 | 默认值    |
+| -------- | :------------------------------------------: | --------: | --------- |
+| type     |                   消息类型                   |  `string` | `default` |
+| duration | 显示时间，单位为毫秒。 设为 0 则不会自动关闭 |  `number` | 3000      |
+| closable |                 是否可以关闭                 | `boolean` | false     |
 
 ### hooks
 
-| 名称   |   说明   |    
-| -------- | ------ | 
+| 名称       | 说明        |
+| ---------- | ----------- |
 | useMessage | 创建message |
 

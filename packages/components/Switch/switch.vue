@@ -77,12 +77,12 @@ watch(() => checked.value, (newValue) => {
 <template>
   <div text-14px h32px inline-flex relative items-center>
     <input hidden type="checkbox" :checked="checked" />
-    <span box-border relative inline-flex items-center rounded-xl border="~ #4c4d4f"
+    <span box-border relative inline-flex items-center rounded-xl border="~ violet"
       :class="[checkedBgClass, sizeBgClass, disabledClass]" cursor-pointer @click="handleClick">
 
       <div v-if="activeText || inactiveText" absolute flex items-center justify-center transition-500 transition-all
         :class="[textClass]">
-        <span>{{ showText }}</span>
+        <span text-12px>{{ showText }}</span>
       </div>
 
       <div rounded-full bg-white border="~" absolute flex items-center justify-center :class="[actionClass, sizeClass]"

@@ -32,10 +32,10 @@ const className = () => {
 
 function classByType(type: 'primary' | 'info' | 'success' | 'warning' | 'error' | 'default', ghost: boolean) {
 
-
+  
   const obj = {
-    default: `${ghost ? 'text-violet-500  border-violet-600' : 'bg-violet-500 text-white'} `,
-    primary: `${ghost ? 'text-green-500 border-green-600' : 'bg-green-500 text-white'}`,
+    primary: `${ghost ? 'text-violet-500  border-violet-600' : 'bg-violet-500 text-white'} `,
+    default: `${ghost ? ' border-gray-500' : ' bg-gray-500 text-white'}`,
     info: `${ghost ? 'text-blue-500 border-blue-600' : 'bg-blue-500 text-white'} `,
     success: `${ghost ? 'text-green-600 border-green-600' : 'bg-green-600 text-white'} `,
     warning: `${ghost ? 'text-orange-500 border-orange-600' : 'bg-orange-500 text-white'} `,
@@ -57,7 +57,7 @@ function classDisabled(disabled: boolean) {
 
 </script>
 <template>
-  <button :disabled="disabled" :class="className()" text-center relative v-ripple duration-500 transition-all border="~"
+  <button :disabled="disabled" :class="className()" text-center relative v-ripple duration-500 transition-all border
     text-sm rounded box-border leading-5 antialiased @click="(e) => emits('click', e)">
     <slot></slot>
     <span class="ripple-root"></span>

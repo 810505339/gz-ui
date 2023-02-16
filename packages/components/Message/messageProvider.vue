@@ -84,5 +84,5 @@ provide(messageApiInjectionKey, api)
       <messageEnvironment v-for="message in messageList" :key="message.key" :content="message.content"
         :closable="message.closable" transition-all translate-y-0 ref="messageRefs" :type="message.type" />
     </div>
-  </Teleport>
+</Teleport>
 </template>
